@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/AIFriends.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/views/index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +41,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "24.16.0",
     "javascript.nodejs.core.library.typings.version": "24.12.4",
     "last_opened_file_path": "C:/Users/lenovo/PycharmProjects/LLM/AIFriends/backend/web/templates",
@@ -81,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1779776148099</updated>
       <workItem from="1779776289671" duration="124000" />
-      <workItem from="1779776422490" duration="11689000" />
+      <workItem from="1779776422490" duration="13035000" />
     </task>
     <servers />
   </component>

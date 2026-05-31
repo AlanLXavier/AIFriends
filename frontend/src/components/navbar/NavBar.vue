@@ -22,14 +22,14 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
          <div class="px-2 font-bold text-xl">AIFriends</div>
         </div>
 
-     <div class="navbar-center">
-               <div class="join">
+     <div class="navbar-center flex justify-center">
+               <div class="join flex justify-center">
           <input class="input join-item rounded-l-full" placeholder="搜索你感兴趣的内容" />
           <button class="btn join-item rounded-r-full"><SearchIcon/>搜索</button>
         </div>
      </div>
         <div class="navbar-end">
-          <button class = "btn btn-ghost text-lg">登录</button>
+          <RouterLink :to="{name:'user-account-login-index'}" active-class="btn-active" class = "btn btn-ghost text-lg">登录</RouterLink>
         </div>
       </nav>
       <!-- Page content here -->
@@ -43,12 +43,12 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
         <ul class="menu w-full grow">
           <!-- List item -->
           <li>
-            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="首页">
+            <RouterLink :to="{name:'homepage-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="首页">
               <!-- Home icon -->
 <!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>-->
               <HomepageIcon/>
               <span class="is-drawer-close:hidden">首页</span>
-            </button>
+            </RouterLink>
           </li>
 
 <!--          &lt;!&ndash; List item &ndash;&gt;-->
@@ -60,20 +60,20 @@ import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
 <!--            </button>-->
 <!--          </li>-->
           <li>
-            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="好友">
+            <RouterLink :to="{name:'friend-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="好友">
               <!-- Home icon -->
 <!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>-->
               <FriendIcon/>
               <span class="is-drawer-close:hidden">好友</span>
-            </button>
+            </RouterLink>
           </li>
           <li>
-            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="创作">
+            <RouterLink :to="{name:'create-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="创作">
               <!-- Home icon -->
 <!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>-->
               <CreateIcon/>
               <span class="is-drawer-close:hidden">创作</span>
-            </button>
+            </RouterLink>
           </li>
         </ul>
       </div>

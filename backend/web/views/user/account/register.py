@@ -1,7 +1,6 @@
-import user_profile
 from django.contrib.auth.models import User
 from rest_framework import status
-from rest_framework.response import responses, Response
+from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -26,8 +25,8 @@ class RegisterView(APIView):
                 'access': str(refresh.access_token),
                 'user_id': user.id,
                 'username': user.username,
-                'photo': user_profile.photo.url,
-                'profile': user_profile.profile,
+                'photo': userprofile.photo.url,
+                'profile': userprofile.profile,
 
             })
             response.set_cookie(

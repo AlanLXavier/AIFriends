@@ -9,7 +9,7 @@ export const useUserStore = defineStore('user',()=>{
     const accessToken = ref('')
 
     function isLogin() {
-        return !accessToken.value // 必须带value!!!!!!!
+        return !!accessToken.value // 必须带value!!!!!!!
     }
 
     function setAccessToken(token){

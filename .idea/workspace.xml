@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/js/http/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/views/user/account/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/user/account/login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/user/account/logout.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/user/account/logout.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/views/user/account/refresh_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/user/account/refresh_token.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/views/user/account/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/user/account/register.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/NavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/navbar/UserMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navbar/UserMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/js/http/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/http/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/stores/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/stores/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/user/account/LoginIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/user/account/LoginIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/user/account/RegisterIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/user/account/RegisterIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Vue Composition API Component" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -95,7 +93,7 @@
       <workItem from="1779776422490" duration="16977000" />
       <workItem from="1779886213236" duration="4618000" />
       <workItem from="1779892826965" duration="9217000" />
-      <workItem from="1780213196956" duration="33859000" />
+      <workItem from="1780213196956" duration="46139000" />
     </task>
     <servers />
   </component>

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/create/character/remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/create/character/remove.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/create/CreateIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/create/CreateIndex.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +19,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Composition API Component" />
-        <option value="Vue Options API Component" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="Vue Options API Component" />
       </list>
     </option>
   </component>
@@ -85,7 +86,7 @@
       <workItem from="1779776422490" duration="16977000" />
       <workItem from="1779886213236" duration="4618000" />
       <workItem from="1779892826965" duration="9217000" />
-      <workItem from="1780213196956" duration="70156000" />
+      <workItem from="1780213196956" duration="77774000" />
     </task>
     <servers />
   </component>

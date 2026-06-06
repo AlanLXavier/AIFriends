@@ -20,7 +20,7 @@ class RemoveCharacterView(APIView):
             #
             # character.delete()
             #
-            # return Response({'result': 'success'})
+            return Response({'result': 'success'})
 
         except:
             return Response({'result': '系统异常，请稍后重试'})

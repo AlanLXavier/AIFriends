@@ -31,7 +31,7 @@ class UpdateProfileView(APIView):
                 return Response({'result': '用户名已存在'})
 
             if photo:
-                remove_old_photo(user_profile.photo.name)
+                remove_old_photo(user_profile.photo)
                 user_profile.photo = photo
 
             user.username = username

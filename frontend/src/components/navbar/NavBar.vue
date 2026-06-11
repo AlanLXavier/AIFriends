@@ -7,82 +7,82 @@ import CreateIcon from "@/components/navbar/icons/CreateIcon.vue";
 import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
 import {useUserStore} from "@/stores/user.js";
 import UserMenu from "@/components/navbar/UserMenu.vue";
+import {ref, watch} from "vue";
+import {useRoute, useRouter} from "vue-router";
 
 const user = useUserStore()
+const searchQuery = ref('')
+const router = useRouter()
+const route = useRoute()
+
+watch(() => route.query.q, newQ => {
+  searchQuery.value = newQ || ''
+})
+
+function handleSearch() {
+  router.push({
+    name: 'homepage-index',
+    query: {
+      q: searchQuery.value.trim(),
+    }
+  })
+}
 </script>
 
 <template>
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
-      <!-- Navbar -->
-      <nav class="navbar w-full bg-base-300 shadow-sm">
-        <div class="navbar-start">  <label for="my-drawer-4" aria-label="open sidebar" class="btn btn-square btn-ghost">
-<!--          &lt;!&ndash; Sidebar toggle icon &ndash;&gt;-->
-<!--          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg>-->
-        <MenuIcon></MenuIcon>
-
-        </label>
-         <div class="px-2 font-bold text-xl">AIFriends</div>
+      <nav class="navbar w-full bg-base-100 shadow-sm">
+        <div class="navbar-start">
+          <label for="my-drawer-4" aria-label="open sidebar" class="btn btn-square btn-ghost">
+            <MenuIcon />
+          </label>
+          <div class="px-2 font-bold text-xl">AIFriends</div>
         </div>
-
-     <div class="navbar-center flex justify-center">
-               <div class="join flex justify-center">
-          <input class="input join-item rounded-l-full" placeholder="搜索你感兴趣的内容" />
-          <button class="btn join-item rounded-r-full"><SearchIcon/>搜索</button>
+        <div class="navbar-center w-4/5 max-w-180 flex justify-center">
+          <form @submit.prevent="handleSearch" class="join w-4/5 flex justify-center">
+            <input v-model="searchQuery" class="input join-item rounded-l-full w-4/5" placeholder="搜索你感兴趣的内容" />
+            <button class="btn join-item rounded-r-full gap-0">
+              <SearchIcon />
+              搜索
+            </button>
+          </form>
         </div>
-     </div>
         <div class="navbar-end">
-          <RouterLink v-if="user.isLogin()" :to="{name:'create-index'}" active-class="btn-active" class="btn btn-ghost text-base mr-6">
-            <CreateIcon/>
+          <RouterLink v-if="user.isLogin()" :to="{name: 'create-index'}" active-class="btn-active" class="btn btn-ghost text-base mr-6">
+            <CreateIcon />
             创作
           </RouterLink>
-          <RouterLink v-if="user.hasPulledUserInfo &&!user.isLogin()" :to="{name:'user-account-login-index'}" active-class="btn-active" class = "btn btn-ghost text-lg">
-            登录</RouterLink>
-          <UserMenu v-else-if="user.isLogin()"/>
+          <RouterLink v-if="user.hasPulledUserInfo && !user.isLogin()" :to="{name: 'user-account-login-index'}" active-class="btn-active" class="btn btn-ghost text-lg">
+            登录
+          </RouterLink>
+          <UserMenu v-else-if="user.isLogin()" />
         </div>
       </nav>
-      <!-- Page content here -->
       <slot></slot>
     </div>
 
     <div class="drawer-side is-drawer-close:overflow-visible">
       <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
-      <div class="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
-        <!-- Sidebar content here -->
+      <div class="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-16 is-drawer-open:w-54">
         <ul class="menu w-full grow">
-          <!-- List item -->
           <li>
-            <RouterLink :to="{name:'homepage-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="首页">
-              <!-- Home icon -->
-<!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>-->
-              <HomepageIcon/>
-              <span class="is-drawer-close:hidden">首页</span>
-            </RouterLink>
-          </li>
-
-<!--          &lt;!&ndash; List item &ndash;&gt;-->
-<!--          <li>-->
-<!--            <button class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">-->
-<!--              &lt;!&ndash; Settings icon &ndash;&gt;-->
-<!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>-->
-<!--              <span class="is-drawer-close:hidden">Settings</span>-->
-<!--            </button>-->
-<!--          </li>-->
-          <li>
-            <RouterLink :to="{name:'friend-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="好友">
-              <!-- Home icon -->
-<!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>-->
-              <FriendIcon/>
-              <span class="is-drawer-close:hidden">好友</span>
+            <RouterLink :to="{name: 'homepage-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="首页">
+              <HomepageIcon />
+              <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">首页</span>
             </RouterLink>
           </li>
           <li>
-            <RouterLink :to="{name:'create-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="创作">
-              <!-- Home icon -->
-<!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor" class="my-1.5 inline-block size-4"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>-->
-              <CreateIcon/>
-              <span class="is-drawer-close:hidden">创作</span>
+            <RouterLink :to="{name: 'friend-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="好友">
+              <FriendIcon />
+              <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">好友</span>
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink :to="{name: 'create-index'}" active-class="menu-focus" class="is-drawer-close:tooltip is-drawer-close:tooltip-right py-3" data-tip="创作">
+              <CreateIcon />
+              <span class="is-drawer-close:hidden text-base ml-2 whitespace-nowrap">创作</span>
             </RouterLink>
           </li>
         </ul>

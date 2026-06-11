@@ -4,13 +4,8 @@
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/create/character/remove.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/create/character/remove.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/create/character/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/create/character/update.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/utils/photo.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/utils/photo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/create/character/CreateCharacter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/create/character/CreateCharacter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/create/character/UpdateCharacter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/create/character/UpdateCharacter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/user/space/SpaceIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/user/space/SpaceIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/create/character/get_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/create/character/get_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/homepage/HomepageIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/homepage/HomepageIndex.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +20,8 @@
       <list>
         <option value="Vue Composition API Component" />
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="Vue Options API Component" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -94,7 +89,7 @@
       <workItem from="1780213196956" duration="87615000" />
       <workItem from="1780905269513" duration="15389000" />
       <workItem from="1781091627673" duration="1467000" />
-      <workItem from="1781157863261" duration="1425000" />
+      <workItem from="1781157863261" duration="4713000" />
     </task>
     <servers />
   </component>

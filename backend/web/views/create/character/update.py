@@ -39,7 +39,6 @@ class UpdateCharacterView(APIView):
 
             character.name = name
             character.profile = profile
-            character.update_time = now()
             character.save()
 
             return Response({

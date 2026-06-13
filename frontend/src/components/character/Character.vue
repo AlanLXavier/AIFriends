@@ -7,7 +7,7 @@ import RemoveIcon from "@/components/character/icons/RemoveIcon.vue";
 import ChatField from "@/components/character/chat_field/ChatField.vue";
 import api from "@/js/http/api.js";
 
-const props = defineProps(['character', 'canEdit'])
+const props = defineProps(['character', 'canEdit', 'canRemoveFriend', 'friendId'])
 const emit = defineEmits(['remove'])
 const isHover = ref(false)
 const user = useUserStore()
@@ -46,6 +46,18 @@ async function handleRemoveCharacter() {
   } catch (err) {
   }
 }
+
+async function handleRemoveFriend() {
+  try {
+    const res = await api.post('/api/friend/remove/', {
+      friend_id: props.friendId,
+    })
+    if (res.data.result === 'success') {
+      emit('remove', props.friendId)
+    }
+  } catch (err) {
+  }
+}
 </script>
 
 <template>
@@ -55,11 +67,21 @@ async function handleRemoveCharacter() {
         <img :src="character.background" class="transition-transform duration-300" :class="{'scale-120': isHover}" alt="">
         <div class="absolute left-0 top-50 w-60 h-50 bg-linear-to-t from-black/40 to-transparent"></div>
 
+        <!-- 修改/删除角色按钮（仅个人空间 + 本人） -->
         <div v-if="canEdit && character.author.user_id === user.id" class="absolute right-0 top-50">
-          <RouterLink :to="{name: 'update-character', params: {character_id: character.id}}" class="btn btn-circle btn-ghost bg-transparent">
+          <RouterLink :to="{name: 'update-character', params: {character_id: character.id}}"
+                      class="btn btn-circle btn-ghost bg-transparent"
+                      @click.stop>
             <UpdateIcon />
           </RouterLink>
-          <button @click="handleRemoveCharacter" class="btn btn-circle btn-ghost bg-transparent">
+          <button @click.stop="handleRemoveCharacter" class="btn btn-circle btn-ghost bg-transparent">
+            <RemoveIcon />
+          </button>
+        </div>
+
+        <!-- 删除好友按钮（仅好友页面） -->
+        <div v-if="canRemoveFriend" class="absolute right-0 top-50">
+          <button @click.stop="handleRemoveFriend" class="btn btn-circle btn-ghost bg-transparent">
             <RemoveIcon />
           </button>
         </div>

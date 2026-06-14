@@ -1,7 +1,7 @@
 <script setup>
 
 import UserInfoField from "@/views/user/space/components/UserInfoField.vue";
-import {nextTick, onBeforeUnmount, onMounted, ref} from "vue";
+import {nextTick, onBeforeUnmount, onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import api from "@/js/http/api.js";
 import Character from "@/components/character/Character.vue";
@@ -54,6 +54,18 @@ async function loadMore() {
 function removeCharacter(characterId) {
   characters.value = characters.value.filter(c => c.id !== characterId)
 }
+
+function reset() {
+  userProfile.value = null
+  characters.value = []
+  isLoading.value = false
+  hasCharacters.value = true
+  loadMore()
+}
+
+watch(() => route.params.user_id, () => {
+  reset()
+})
 
 let observer = null
 onMounted(async () => {

@@ -20,6 +20,7 @@ class SSERenderer(BaseRenderer):
 
 class MessageChatView(APIView):
     permission_classes = [IsAuthenticated]
+    renderer_classes = [SSERenderer]
     def post(self, request):
         friend_id = request.data['friend_id']
         message = request.data['message'].strip()
@@ -46,10 +47,11 @@ class MessageChatView(APIView):
                 if isinstance(msg, BaseMessageChunk):
                     if msg.content:
                         full_output += msg.content
-                        yield f'data: {json.dumps({'content': msg.content}, ensure_ascii=False)}\n\n'
+                        yield f"data: {json.dumps({'content': msg.content}, ensure_ascii=False)}\n\n"
                     if hasattr(msg, 'usage_metadata') and msg.usage_metadata:
                         full_usage = msg.usage_metadata
             yield 'data: [DONE]\n\n'
+            print('AI回复:', full_output)
             input_tokens = full_usage.get('input_tokens', 0)
             output_tokens = full_usage.get('output_tokens', 0)
             total_tokens = full_usage.get('total_tokens', 0)

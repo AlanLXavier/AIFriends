@@ -1,32 +1,73 @@
 <script setup>
+import SendIcon from "@/components/character/icons/SendIcon.vue";
+import MicIcon from "@/components/character/icons/MicIcon.vue";
+import {ref} from "vue";
+import streamApi from "@/js/http/streamApi.js";
 
+const props = defineProps(['friendId'])
+const emit = defineEmits(['pushBackMessage', 'addToLastMessage'])
+const inputRef = ref(null)
+const message = ref('')
+let isProcessing = false
+
+function focus() {
+  inputRef.value.focus()
+}
+
+async function handleSend() {
+  if (isProcessing) return
+  isProcessing = true
+
+  const content = message.value.trim()
+  if (!content) return
+  message.value = ''
+
+  emit('pushBackMessage', {role: 'user', content: content, id: crypto.randomUUID()})
+  emit('pushBackMessage', {role: 'ai', content: '', id: crypto.randomUUID()})
+
+  try {
+    await streamApi('/api/friend/message/chat/', {
+      body: {
+        friend_id: props.friendId,
+        message: content,
+      },
+      onmessage(data, isDone) {
+        if (isDone) {
+          isProcessing = false
+        } else if (data.content) {
+          emit('addToLastMessage', data.content)
+        }
+      },
+      onerror(err) {
+        isProcessing = false
+      },
+    })
+  } catch (err) {
+    isProcessing = false
+  }
+}
+
+defineExpose({
+  focus,
+})
 </script>
 
 <template>
-  <div class="absolute bottom-4 left-2 h-12 w-86 flex items-center">
+  <form @submit.prevent="handleSend" class="absolute bottom-4 left-2 h-12 w-86 flex items-center">
     <input
-      type="text"
-      class="input bg-black/30 text-white text-base backdrop-blur-sm w-full h-full rounded-2xl mr-20"
-      placeholder="文本输入"
-    />
-    <div class="absolute right-2 w-8 h-8 flex justify-center items-center cursor-pointer rounded-full hover:bg-white/10">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-           stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-           class="w-4 h-4 text-white">
-        <path d="M22 2L11 13" />
-        <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-      </svg>
+        ref="inputRef"
+        v-model="message"
+        class="input bg-black/30 backdrop-blur-sm text-white text-base w-full h-full rounded-2xl pr-20"
+        type="text"
+        placeholder="文本输入..."
+    >
+    <div @click="handleSend" class="absolute right-2 w-8 h-8 flex justify-center items-center cursor-pointer">
+      <SendIcon />
     </div>
-    <div class="absolute right-8 w-8 h-8 flex justify-center items-center cursor-pointer rounded-full hover:bg-white/10">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-           stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-           class="w-4 h-4 text-white">
-        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-        <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-        <path d="M12 19v3" />
-      </svg>
+    <div class="absolute right-10 w-8 h-8 flex justify-center items-center cursor-pointer">
+      <MicIcon />
     </div>
-  </div>
+  </form>
 </template>
 
 <style scoped>

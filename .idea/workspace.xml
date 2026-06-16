@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/character/chat_field/ChatField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/character/chat_field/ChatField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/character/chat_field/input_field/InputField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/character/chat_field/input_field/InputField.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +23,8 @@
       <list>
         <option value="Vue Composition API Component" />
         <option value="JavaScript File" />
-        <option value="Vue Options API Component" />
         <option value="Python Script" />
+        <option value="Vue Options API Component" />
       </list>
     </option>
   </component>
@@ -89,7 +93,7 @@
       <workItem from="1780213196956" duration="87615000" />
       <workItem from="1780905269513" duration="15389000" />
       <workItem from="1781091627673" duration="1467000" />
-      <workItem from="1781157863261" duration="32049000" />
+      <workItem from="1781157863261" duration="50206000" />
     </task>
     <servers />
   </component>

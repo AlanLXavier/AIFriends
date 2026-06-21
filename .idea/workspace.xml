@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/models/friend.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/models/friend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/character/chat_field/ChatField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/character/chat_field/ChatField.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/character/chat_field/input_field/InputField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/character/chat_field/input_field/InputField.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,32 +37,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "24.16.0",
-    "javascript.nodejs.core.library.typings.version": "24.12.4",
-    "last_opened_file_path": "C:/Users/lenovo/PycharmProjects/LLM/AIFriends/backend/media/user/photos",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;24.16.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;24.12.4&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/PycharmProjects/LLM/AIFriends/backend/media/user/photos&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component",
-      "Vue Options API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;,
+      &quot;Vue Options API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lenovo\PycharmProjects\LLM\AIFriends\backend\media\user\photos" />
@@ -93,7 +90,8 @@
       <workItem from="1780213196956" duration="87615000" />
       <workItem from="1780905269513" duration="15389000" />
       <workItem from="1781091627673" duration="1467000" />
-      <workItem from="1781157863261" duration="50206000" />
+      <workItem from="1781157863261" duration="52170000" />
+      <workItem from="1781939976050" duration="7737000" />
     </task>
     <servers />
   </component>
@@ -106,6 +104,10 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/web/admin.py</url>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

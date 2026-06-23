@@ -1,5 +1,5 @@
 import json
-import json
+import traceback
 
 from django.http import StreamingHttpResponse
 from langchain_core.messages import HumanMessage, BaseMessageChunk, SystemMessage, AIMessage
@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from web.models.friend import Friend, Message, SystemPrompt
 from web.views.friend.message.chat.graph import ChatGraph
-# from web.views.friend.message.memory.update import update_memory
+from web.views.friend.message.memory.update import update_memory
 
 
 class SSERenderer(BaseRenderer):
@@ -72,14 +72,20 @@ class MessageChatView(APIView):
         def event_stream():
             full_output = ''
             full_usage = {}
-            for msg, metadata in app.stream(inputs, stream_mode="messages"):
-                if isinstance(msg, BaseMessageChunk):
-                    if msg.content:
-                        full_output += msg.content
-                        yield f'data: {json.dumps({'content': msg.content}, ensure_ascii=False)}\n\n'
-                    if hasattr(msg, 'usage_metadata') and msg.usage_metadata:
-                        full_usage = msg.usage_metadata
-            yield 'data: [DONE]\n\n'
+            try:
+                for msg, metadata in app.stream(inputs, stream_mode="messages"):
+                    if isinstance(msg, BaseMessageChunk):
+                        if msg.content:
+                            full_output += msg.content
+                            yield f"data: {json.dumps({'content': msg.content}, ensure_ascii=False)}\n\n"
+                        if hasattr(msg, 'usage_metadata') and msg.usage_metadata:
+                            full_usage = msg.usage_metadata
+                yield 'data: [DONE]\n\n'
+            except Exception as e:
+                print(f'=== 聊天流异常 ===')
+                traceback.print_exc()
+                yield f"data: {json.dumps({'error': '服务暂时不可用，请稍后重试'}, ensure_ascii=False)}\n\n"
+                yield 'data: [DONE]\n\n'
             input_tokens = full_usage.get('input_tokens', 0)
             output_tokens = full_usage.get('output_tokens', 0)
             total_tokens = full_usage.get('total_tokens', 0)
@@ -95,8 +101,13 @@ class MessageChatView(APIView):
                 output_tokens=output_tokens,
                 total_tokens=total_tokens,
             )
-            # if Message.objects.filter(friend=friend).count() % 1 == 0:
-            #     update_memory(friend)
+            msg_count = Message.objects.filter(friend=friend).count()
+            print(f'=== 当前消息数: {msg_count}, 是否触发记忆更新: {msg_count % 10 == 0} ===')
+            if msg_count % 10 == 0:
+                print('=== 开始更新长期记忆 ===')
+                update_memory(friend)
+                friend.refresh_from_db()
+                print(f'=== 记忆更新完成, memory长度: {len(friend.memory or "")} ===')
 
         response = StreamingHttpResponse(event_stream(), content_type='text/event-stream')
         response['Cache-Control'] = 'no-cache'

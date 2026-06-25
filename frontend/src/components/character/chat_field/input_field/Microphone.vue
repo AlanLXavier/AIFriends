@@ -52,15 +52,20 @@ const sendToBackend = async (arrayBuffer) => {
   const blob = new Blob([arrayBuffer], { type: "audio/pcm" })
   const formData = new FormData()
   formData.append("audio", blob, 'voice.pcm')
+  console.log('[ASR] 准备发送音频, 大小:', arrayBuffer.byteLength, 'bytes')
 
   try {
     const res = await api.post('/api/friend/message/asr/asr/', formData)
     const data = res.data
+    console.log('[ASR] 后端返回:', JSON.stringify(data))
     if (data.result === 'success') {
+      console.log('[ASR] 识别文字:', data.text)
       emit('send', null, data.text)
+    } else {
+      console.error('[ASR] 后端返回非成功:', data.result)
     }
   } catch (err) {
-    console.error(err)
+    console.error('[ASR] 请求失败:', err)
   }
 };
 

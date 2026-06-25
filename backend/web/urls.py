@@ -38,6 +38,6 @@ urlpatterns = [
     path('api/friend/message/chat/', MessageChatView.as_view()),
     path('api/friend/message/get_history/', GetHistoryView.as_view()),
 
-    re_path(r'^(?!media/|assets/|admin/).*$', index),
+    re_path(r'^(?!media/|assets/|admin/|static/).*$', index),
 ]
 

@@ -132,6 +132,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [  # 开发阶段使用，生产阶段需要注释掉
     BASE_DIR / 'static',
+    BASE_DIR.parent / 'frontend' / 'public',
 ]
 
 MEDIA_URL = 'http://127.0.0.1:8000/media/'

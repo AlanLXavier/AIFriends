@@ -41,6 +41,11 @@ async function showModal() {
   inputRef.value.focus()
 }
 
+function handleClose() {
+  modalRef.value.close()
+  inputRef.value.close()
+}
+
 defineExpose({ showModal })
 
 </script>
@@ -49,7 +54,7 @@ defineExpose({ showModal })
   <dialog ref="modalRef" class="modal">
     <div class="modal-box w-90 h-150" :style="modalStyle">
       <button class="btn btn-sm btn-circle btn-ghost bg-transparent absolute left-2 top-2"
-              @click="modalRef.close()">✕</button>
+              @click="handleClose">✕</button>
       <div v-if="friend" class="flex flex-col h-full">
         <CharacterPhotoField :character="friend.character" />
         <ChatHistory

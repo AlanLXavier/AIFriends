@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7054a8b8-00be-40bf-88e9-6b42038deb77" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/friend/message/chat/chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/character/chat_field/ChatField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/character/chat_field/ChatField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/character/chat_field/input_field/Microphone.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/character/chat_field/input_field/Microphone.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/js/http/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/http/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/js/http/streamApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/js/http/streamApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Composition API Component" />
-        <option value="JavaScript File" />
         <option value="Vue Options API Component" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -48,7 +54,7 @@
     "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "24.16.0",
     "javascript.nodejs.core.library.typings.version": "24.12.4",
-    "last_opened_file_path": "C:/Users/lenovo/PycharmProjects/LLM/AIFriends/frontend/public/vad",
+    "last_opened_file_path": "C:/Users/lenovo/PycharmProjects/LLM/AIFriends/frontend/public",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2026.1.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
@@ -63,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lenovo\PycharmProjects\LLM\AIFriends\frontend\public" />
       <recent name="C:\Users\lenovo\PycharmProjects\LLM\AIFriends\frontend\public\vad" />
       <recent name="C:\Users\lenovo\PycharmProjects\LLM\AIFriends\backend\media\user\photos" />
       <recent name="C:\Users\lenovo\PycharmProjects\LLM\AIFriends\backend\web\templates" />
@@ -90,7 +97,12 @@
       <workItem from="1780905269513" duration="15389000" />
       <workItem from="1781091627673" duration="1467000" />
       <workItem from="1781157863261" duration="52170000" />
-      <workItem from="1781939976050" duration="40941000" />
+      <workItem from="1781939976050" duration="44948000" />
+      <workItem from="1782737945703" duration="35000" />
+      <workItem from="1782971475881" duration="97000" />
+      <workItem from="1782976614444" duration="39000" />
+      <workItem from="1782991851048" duration="14000" />
+      <workItem from="1783251604562" duration="5249000" />
     </task>
     <servers />
   </component>
